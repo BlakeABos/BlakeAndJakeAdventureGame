@@ -344,7 +344,7 @@ namespace BlakeAndJakeAdventureGame
                     player4.Play();
                     break;
                 case 15:
-                    titleLabel.Text = "A man comes to the door and you tell him your lost. He lets you use his phone and you call for a ride YOU WIN";
+                    titleLabel.Text = "A man comes to the door and you tell him you're lost. He lets you use his phone and you call for a ride YOU WIN";
                     redLabel.Text = "Happy for";
                     blueLabel.Text = "you :D";
                     yellowButton.Visible = false;
