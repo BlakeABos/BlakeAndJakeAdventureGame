@@ -120,7 +120,7 @@ namespace BlakeAndJakeAdventureGame
                 {
                     int chance = randGen.Next(1, 101);
 
-                    if (chance < 1)
+                    if (chance < 70)
                     {
                         scene = 12;
                     }
