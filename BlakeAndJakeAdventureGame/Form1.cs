@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace BlakeAndJakeAdventureGame
 {
@@ -119,7 +120,7 @@ namespace BlakeAndJakeAdventureGame
                 {
                     int chance = randGen.Next(1, 101);
 
-                    if (chance < 70)
+                    if (chance < 1)
                     {
                         scene = 12;
                     }
@@ -324,9 +325,11 @@ namespace BlakeAndJakeAdventureGame
                     yellowButton.Visible = false;
                     yellowLabel.Visible = false;
                     backgroundBox.Image = Properties.Resources.Scene_13;
+                    backgroundBox.Refresh();
                     SoundPlayer player6 = new SoundPlayer(Properties.Resources.Wet_Tearing_Meat__SOUND_EFFECT_);
                     player6.Play();
-
+                    Thread.Sleep(2000);
+                    player6.Stop();
                     break;
                 case 14:
                     titleLabel.Text = "You wake a man up from his sleep. He thinks you are an intruder and shoots you with his gun";
