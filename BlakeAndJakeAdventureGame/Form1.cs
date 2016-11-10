@@ -1,6 +1,6 @@
 ﻿//Made by Blake Bos and Jakob Innis
 //Nov 3
-//Adventure game
+//Purpose : Adventure game
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +21,7 @@ namespace BlakeAndJakeAdventureGame
         public Form1()
         {
             InitializeComponent();
+            //seting certain labels to be invisible
             yellowButton.Visible = false;
             yellowLabel.Visible = false;
             Random randGen = new Random();
@@ -141,6 +142,10 @@ namespace BlakeAndJakeAdventureGame
                     {
                     scene = 5;
                  }
+                else if (scene == 11)
+                {
+                    scene = 18;
+                }
             }
             if (e.KeyCode == Keys.Y) // Keyboard button press for yellow button
             {
@@ -184,6 +189,7 @@ namespace BlakeAndJakeAdventureGame
                 {
                     scene = 0;
                 }
+             
             }  
 
                 switch (scene)
@@ -196,7 +202,7 @@ namespace BlakeAndJakeAdventureGame
                     greenBox.Visible = false;
                     backgroundBox.Image = Properties.Resources.scene_16;
                     break;
-                case 1:
+                case 1: //start scene 1
                     titleLabel.Text = "Your car breaks down in the middle of nowhere on a hot day. Would you like to walk into the forest or walk down the road looking for help?";
                     redLabel.Text = "Forest";
                     blueLabel.Text = "Road";
@@ -208,7 +214,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player15 = new SoundPlayer(Properties.Resources.Car_wont_start_sound_effect);
                     player15.Play();
                     break;
-                case 2:
+                case 2://start scene 2
                     titleLabel.Text = "Once you enter the forest do you go left, right or straight?";
                     redLabel.Text = "Left";
                     blueLabel.Text = "Right";
@@ -219,14 +225,14 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player10 = new SoundPlayer(Properties.Resources.leaves_rustling___sound_effect);
                     player10.Play();
                     break;
-                case 3:
+                case 3://start scene 3
                     titleLabel.Text = "You're getting pretty thirsty . Do you keep walking or go into the forest?";
                     redLabel.Text = "Forest";
                     blueLabel.Text = "Road";
                     yellowButton.Visible = false;
                     yellowLabel.Visible = false;
                     break;
-                case 4:
+                case 4://start scene 4
                     titleLabel.Text = "You come to two more paths. left or right? ";
                     redLabel.Text = "Left";
                     blueLabel.Text = "Right";
@@ -236,7 +242,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player = new SoundPlayer(Properties.Resources.leaves_rustling___sound_effect);
                     player.Play();
                     break;
-                case 5:
+                case 5://start scene 5
                     titleLabel.Text = "you find a clean water creek and fill your water bottle. There is a horse in the water. Do you try to ride it or kill it for food?";
                     redLabel.Text = "Ride it";
                     blueLabel.Text = "Kill it";
@@ -246,7 +252,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player9 = new SoundPlayer(Properties.Resources.Horse_neighing_sound_effect);
                     player9.Play();
                     break;
-                case 6:
+                case 6://start scene 6
                     titleLabel.Text = "You find a log cabin do you enter or knock ? ";
                     redLabel.Text = "Enter";
                     blueLabel.Text = "Knock";
@@ -254,7 +260,7 @@ namespace BlakeAndJakeAdventureGame
                     yellowLabel.Visible = false;
                     backgroundBox.Image = Properties.Resources.Scene_6;
                     break;
-                case 7:
+                case 7://start scene 7
                     titleLabel.Text = "You feel pain in your chest, you pass out and die from heat stroke.";
                     redLabel.Text = "you";
                     blueLabel.Text = "dead";
@@ -266,7 +272,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player2 = new SoundPlayer(Properties.Resources.Body_Falling_Sound_Effects__High_Quality_Free_Down);
                     player2.Play();
                     break;
-                case 8:
+                case 8://start scene 8
                     titleLabel.Text = "You find an abandon truck with a repair kit in it. You make your way back to your car and fix it ";
                     redLabel.Text = "You";
                     blueLabel.Text = "Win";
@@ -278,7 +284,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player7 = new SoundPlayer(Properties.Resources.Ratchet_Wrench_Sound_Effect);
                     player7.Play();
                     break;
-                case 9:
+                case 9://start scene 9
                     titleLabel.Text = "A sign says 'Town ahead' Follow the sign or continue through the forest?";
                     redLabel.Text = "Follow sign";
                     blueLabel.Text = "Forest";
@@ -288,7 +294,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player11 = new SoundPlayer(Properties.Resources.leaves_rustling___sound_effect);
                     player11.Play();
                     break;
-                case 10:
+                case 10://start scene 10
                     titleLabel.Text = "You manage to get it calm and ride it back to the road and straight to the nearest town. You Win!";
                     redLabel.Text = "Winner";
                     blueLabel.Text = "You win !";
@@ -298,7 +304,7 @@ namespace BlakeAndJakeAdventureGame
                     greenBox.Visible = true;
                     backgroundBox.Image = Properties.Resources.Scene_10;
                     break;
-                case 11:
+                case 11://start scene 11
                     titleLabel.Text = "You feel your getting nowhere, turn back or continue?";
                     redLabel.Text = "Turn Back";
                     blueLabel.Text = "Continue";
@@ -306,7 +312,7 @@ namespace BlakeAndJakeAdventureGame
                     yellowLabel.Visible = false;
                     backgroundBox.Image = Properties.Resources.Scene_11;
                     break;
-                case 12:
+                case 12://start scene 12
                     titleLabel.Text = "The horse kills you";
                     redLabel.Text = "BIG OLD";
                     blueLabel.Text = "LOSER";
@@ -318,7 +324,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player5 = new SoundPlayer(Properties.Resources.Horse_neighing_sound_effect);
                     player5.Play();
                     break;
-                case 13:
+                case 13://start scene 13
                     titleLabel.Text = "You live, eat the raw meat and continue through the forest";
                     redLabel.Text = "Press";
                     blueLabel.Text = "M to continue";
@@ -331,7 +337,7 @@ namespace BlakeAndJakeAdventureGame
                     Thread.Sleep(2000);
                     player6.Stop();
                     break;
-                case 14:
+                case 14://start scene 14
                     titleLabel.Text = "You wake a man up from his sleep. He thinks you are an intruder and shoots you with his gun";
                     redLabel.Text = "YOU SUCK";
                     blueLabel.Text = "lol";
@@ -343,7 +349,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player4 = new SoundPlayer(Properties.Resources.Authentic_Shotgun_sound_effect_YouTube_1_x264);
                     player4.Play();
                     break;
-                case 15:
+                case 15://start scene 15
                     titleLabel.Text = "A man comes to the door and you tell him you're lost. He lets you use his phone and you call for a ride YOU WIN";
                     redLabel.Text = "Happy for";
                     blueLabel.Text = "you :D";
@@ -355,7 +361,7 @@ namespace BlakeAndJakeAdventureGame
                     SoundPlayer player8 = new SoundPlayer(Properties.Resources.Door_Knock);
                     player8.Play();
                     break;
-                case 16:
+                case 16://start scene 16
                     titleLabel.Text = "Are you sure? Its really hot outside and your getting thirtsy";
                     redLabel.Text = "No, Go into the forest";
                     blueLabel.Text = "Yes, Take the road";
@@ -363,7 +369,7 @@ namespace BlakeAndJakeAdventureGame
                     yellowLabel.Visible = false;
                     backgroundBox.Image = Properties.Resources.scene_16;
                     break;
-                case 17:
+                case 17://start scene 17
                     titleLabel.Text = "You fall down a steep hill and get impaled by a sharp stick. You bleed out.";
                     redLabel.Text = "Too many ";
                     blueLabel.Text = "ways to die";
@@ -373,7 +379,7 @@ namespace BlakeAndJakeAdventureGame
                     greenBox.Visible = true;
                     backgroundBox.Image = Properties.Resources.Death_Scenes_18__12__14__7;
                     break;
-                case 18:
+                case 18://start scene 18
                     titleLabel.Text = "You die of dehydration";
                     redLabel.Text = "awww";
                     blueLabel.Text = ":(";
